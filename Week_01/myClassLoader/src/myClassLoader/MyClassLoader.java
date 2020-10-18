@@ -7,6 +7,11 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+/**
+ * 	自定义类加载器
+ * @author 杨雄辉
+ * update: 2020年10月18日 下午11:41:26
+ */
 public class MyClassLoader extends ClassLoader {
 
 	public static void main(String[] args) {
@@ -25,11 +30,19 @@ public class MyClassLoader extends ClassLoader {
 
 	}
 
+	/**
+	 * 	自定义findClass方法
+	 * @author 杨雄辉
+	 * update: 2020年10月18日 下午11:47:02
+	 * @param name
+	 * @return
+	 * @throws ClassNotFoundException
+	 */
 	@Override
 	protected Class<?> findClass(String name) throws ClassNotFoundException {
 		File file = new File(name+".xlass");
 		long size = file.length();
-		System.out.println(size);
+//		System.out.println(size);
 		if (size > Integer.MAX_VALUE) {
             throw new ClassNotFoundException("file too big.");
         }
