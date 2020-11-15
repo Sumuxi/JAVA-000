@@ -4,7 +4,7 @@
 
 1.使用 GCLogAnalysis.java 自己演练一遍串行 / 并行 /CMS/G1 的案例。
 
-Answer:
+answer:
 
 ### 1.串行GC
 
@@ -18,7 +18,7 @@ java -XX:+UseSerialGC -Xms2048m -Xmx2048m -Xloggc:SerialGC.Xmx2048m.log -XX:+Pri
 java -XX:+UseSerialGC -Xms4096m -Xmx4096m -Xloggc:SerialGC.Xmx4096m.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
 ```
 
-运行截图如下，生成的日志文件在Q1文件夹下。
+运行截图如下，生成的日志文件在Q1目录下。
 
 ![1](https://gitee.com/Sumuxi/public/raw/master/images/20201115190929.png)
 
@@ -32,7 +32,7 @@ java -XX:+UseParallelGC -Xms2048m -Xmx2048m -Xloggc:ParallelGC.Xmx2048m.log -XX:
 java -XX:+UseParallelGC -Xms4096m -Xmx4096m -Xloggc:ParallelGC.Xmx4096m.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
 ```
 
-运行截图如下，生成的日志文件在Q1文件夹下。
+运行截图如下，生成的日志文件在Q1目录下。
 
 ![2](https://gitee.com/Sumuxi/public/raw/master/images/20201115190947.png)
 
@@ -46,7 +46,7 @@ java -XX:+UseConcMarkSweepGC -Xms2048m -Xmx2048m -Xloggc:ConcMarkSweepGC.Xmx2048
 java -XX:+UseConcMarkSweepGC -Xms4096m -Xmx4096m -Xloggc:ConcMarkSweepGC.Xmx4096m.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
 ```
 
-运行截图如下，生成的日志文件在Q1文件夹下。
+运行截图如下，生成的日志文件在Q1目录下。
 
 ![3](https://gitee.com/Sumuxi/public/raw/master/images/20201115190955.png)
 
@@ -60,7 +60,7 @@ java -XX:+UseG1GC -Xms2048m -Xmx2048m -Xloggc:G1GC.Xmx2048m.log -XX:+PrintGCDeta
 java -XX:+UseG1GC -Xms4096m -Xmx4096m -Xloggc:G1GC.Xmx4096m.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
 ```
 
-运行截图如下，生成的日志文件在Q1文件夹下。
+运行截图如下，生成的日志文件在Q1目录下。
 
 ![4](https://gitee.com/Sumuxi/public/raw/master/images/20201115191011.png)
 
@@ -81,7 +81,7 @@ java -XX:+UseG1GC -Xms4096m -Xmx4096m -Xloggc:G1GC.Xmx4096m.log -XX:+PrintGCDeta
 
 2.使用压测工具（wrk 或 sb），演练 gateway-server-0.0.1-SNAPSHOT.jar 示例。
 
-Answer:
+answer:
 
 ​	堆内存分别使用512M，1G，2G，4G，GC算法分别使用 Parallel GC、CMS GC 和 G1 GC。
 
@@ -379,31 +379,118 @@ Avg: 0ms
 
 ```powershell
 java -jar -XX:+UseParallelGC -Xms4g -Xmx4g gateway-server-0.0.1-SNAPSHOT.jar
-java -jar -XX:+UseConcMarkSweepGC -Xms4g -Xmx4g gateway-server-0.0.1-SNAPSHOT.jar
-java -jar -XX:+UseG1GC -Xms4g -Xmx4g gateway-server-0.0.1-SNAPSHOT.jar
+
+PS C:\Users\yangguohui> sb -u http://localhost:8088/api/hello -c 24 -N 60
+Starting at 2020-11-16 00:09:39
+[Press C to stop the test]
+655963  (RPS: 10320.9)
+---------------Finished!----------------
+Finished at 2020-11-16 00:10:43 (took 00:01:03.7753033)
+Status 200:    655973
+
+RPS: 10710.1 (requests/second)
+Max: 86ms
+Min: 0ms
+Avg: 0ms
+
+  50%   below 0ms
+  60%   below 0ms
+  70%   below 0ms
+  80%   below 0ms
+  90%   below 0ms
+  95%   below 0ms
+  98%   below 0ms
+  99%   below 2ms
+99.9%   below 5ms
 ```
 
+![image-20201116002000397](https://gitee.com/Sumuxi/public/raw/master/images/20201116002000.png)
 
+![image-20201116002027079](https://gitee.com/Sumuxi/public/raw/master/images/20201116002027.png)
 
 ### 4G && CMS GC 压测
 
-### 
-
 ```powershell
-java -jar -XX:+UseParallelGC -Xms4g -Xmx4g gateway-server-0.0.1-SNAPSHOT.jar
 java -jar -XX:+UseConcMarkSweepGC -Xms4g -Xmx4g gateway-server-0.0.1-SNAPSHOT.jar
-java -jar -XX:+UseG1GC -Xms4g -Xmx4g gateway-server-0.0.1-SNAPSHOT.jar
+
+PS C:\Users\yangguohui> sb -u http://localhost:8088/api/hello -c 24 -N 60
+Starting at 2020-11-15 23:38:56
+[Press C to stop the test]
+652069  (RPS: 10260.1)
+---------------Finished!----------------
+Finished at 2020-11-15 23:40:00 (took 00:01:03.7687305)
+Status 200:    652071
+
+RPS: 10648.1 (requests/second)
+Max: 295ms
+Min: 0ms
+Avg: 0.1ms
+
+  50%   below 0ms
+  60%   below 0ms
+  70%   below 0ms
+  80%   below 0ms
+  90%   below 0ms
+  95%   below 0ms
+  98%   below 0ms
+  99%   below 2ms
+99.9%   below 5ms
 ```
 
+![c1](https://gitee.com/Sumuxi/public/raw/master/images/20201115234739.PNG)
 
+![c2](https://gitee.com/Sumuxi/public/raw/master/images/20201115234744.PNG)
 
 ### 4G && G1 GC 压测
 
-### 
-
 ```powershell
-java -jar -XX:+UseParallelGC -Xms4g -Xmx4g gateway-server-0.0.1-SNAPSHOT.jar
-java -jar -XX:+UseConcMarkSweepGC -Xms4g -Xmx4g gateway-server-0.0.1-SNAPSHOT.jar
 java -jar -XX:+UseG1GC -Xms4g -Xmx4g gateway-server-0.0.1-SNAPSHOT.jar
+
+PS C:\Users\yangguohui> sb -u http://localhost:8088/api/hello -c 24 -N 60
+Starting at 2020-11-15 23:43:54
+[Press C to stop the test]
+619021  (RPS: 9746.7)
+---------------Finished!----------------
+Finished at 2020-11-15 23:44:57 (took 00:01:03.7192232)
+Status 200:    619023
+
+RPS: 10108.9 (requests/second)
+Max: 241ms
+Min: 0ms
+Avg: 0.1ms
+
+  50%   below 0ms
+  60%   below 0ms
+  70%   below 0ms
+  80%   below 0ms
+  95%   below 0ms
+  98%   below 1ms
+  99%   below 2ms
+99.9%   below 8ms
 ```
 
+![g1](https://gitee.com/Sumuxi/public/raw/master/images/20201115234818.PNG)
+
+![](https://gitee.com/Sumuxi/public/raw/master/images/20201115234823.PNG)
+
+### 结果比较
+
+| RPS(requests/second) |  512M   |   1G    |   2G    |   4G    |
+| -------------------: | :-----: | :-----: | :-----: | :-----: |
+|          Parallel GC | 10638.2 | 11000.5 | 10971.3 | 10710.1 |
+|     ConcMarkSweep GC | 10693.6 | 10901.9 | 10965.9 | 10648.1 |
+|                G1 GC | 9787.5  | 10701.8 |  10983  | 10108.9 |
+
+|      Total Count |  512M  |   1G   |   2G   |   4G   |
+| ---------------: | :----: | :----: | :----: | :----: |
+|      Parallel GC | 651435 | 671692 | 671762 | 655973 |
+| ConcMarkSweep GC | 652707 | 667501 | 671393 | 652071 |
+|            G1 GC | 597382 | 655232 | 672469 | 619023 |
+
+------
+
+## Q4
+
+4.根据上述自己对于 1 和 2 的演示，写一段对于不同 GC 的总结，提交到 Github。
+
+answer：
