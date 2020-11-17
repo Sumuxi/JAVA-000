@@ -717,5 +717,5 @@ G1收集器的运作大致可划分为以下几个步骤：
 
 **2.（必做）**写一段代码，使用 HttpClient 或 OkHttp 访问 [http://localhost:8801 ](http://localhost:8801/)，代码提交到 Github。
 
-answer：在[OkHttpUtils.java](./周六Q2/OkHttpUtils.java)中
+answer：请移步[OkHttpUtils.java](./周六Q2/OkHttpUtils.java)
 
