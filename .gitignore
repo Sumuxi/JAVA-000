@@ -1,8 +1,12 @@
 # Compiled class file
 *.class
 
+# powerpoint file
+*.ppt
+*.pptx
+
 # Log file
-#*.log
+*.log
 
 # BlueJ files
 *.ctxt
