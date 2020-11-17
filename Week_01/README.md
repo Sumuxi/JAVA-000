@@ -10,6 +10,6 @@ answer：请移步[XlassLoader.java](./XlassLoader/XlassLoader.java)
 
 3.**（必做）**画一张图，展示 Xmx、Xms、Xmn、Meta、DirectMemory、Xss 这些内存参数的关系。
 
-answer：
+answer：(已修正)
 
 ![内存参数关系图](https://gitee.com/Sumuxi/public/raw/master/images/20201117182022.png)
