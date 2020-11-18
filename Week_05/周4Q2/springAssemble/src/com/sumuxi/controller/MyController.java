@@ -30,7 +30,9 @@ public class MyController {
     }
 
     public void test() {
-        System.out.println("Spring IOC 容器注入了两个user对象，分别是" + user1.toString() + "," + user2.toString());
+        System.out.println("Spring IOC 容器注入了两个user对象，分别是"
+                + user1.toString() + ","
+                + user2.toString());
     }
 
 
