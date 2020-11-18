@@ -20,7 +20,7 @@ answer:
 
 4.类似于3，在Spring ApplicationContext指定要扫描的包，扫描出所有 Component 和 Java配置类中的bean, Spring完成自动装配。请查看[Main4.java](周4Q2/springAssemble/src/com/sumuxi/Main4.java),[MyConfig.java](周4Q2/springAssemble/src/com/sumuxi/config/MyConfig.java),[User.java](周4Q2/springAssemble/src/com/sumuxi/model/User.java),[MyController.java](周4Q2/springAssemble/src/com/sumuxi/controller/MyController.java)
 
-5.在Spring ApplicationContext指定要扫描的包，扫描出所有 Component 和 Java配置类中的bean, 在MyController通过 @Autowired 和 @Resource 注解告知Spring自动装配 User bean。请查看[Main5.java](周4Q2/springAssemble/src/com/sumuxi/Main5.java),[MyConfig.java](周4Q2/springAssemble/src/com/sumuxi/config/MyConfig.java),[User.java](周4Q2/springAssemble/src/com/sumuxi/model/User.java),[MyController.java
+5.在Spring ApplicationContext指定要扫描的包，扫描出所有 Component 和 Java配置类中的bean, 在MyController通过 @Autowired 和 @Resource 注解告知Spring自动装配 User bean。请查看[Main5.java](周4Q2/springAssemble/src/com/sumuxi/Main5.java),[MyConfig.java](周4Q2/springAssemble/src/com/sumuxi/config/MyConfig.java),[User.java](周4Q2/springAssemble/src/com/sumuxi/model/User.java),[MyController.java](周4Q2/springAssemble/src/com/sumuxi/controller/MyController.java)
 
 
 
@@ -29,9 +29,9 @@ answer:
 
 answer:
 
-starter代码请移步[sumuxi-spring-boot-starter目录](周6Q4\demo-spring-boot-starter\sumuxi-spring-boot-starter)
+starter代码请移步[sumuxi-spring-boot-starter目录](周6Q4/demo-spring-boot-starter/sumuxi-spring-boot-starter)
 
-starter-test代码请移步[starter-test](周6Q4\demo-spring-boot-starter\starter-test)
+starter-test代码请移步[starter-test](周6Q4/demo-spring-boot-starter/starter-test)
 
 
 **6.（必做）**研究一下 JDBC 接口和数据库连接池，掌握它们的设计和用法：
