@@ -1,0 +1,13 @@
+spring:
+  sumuxi:
+    enabled: true
+    student:
+      id: 1
+      name: "sumuxi"
+    klass:
+      students[0]:
+        id: 2
+        name: 2
+      students[1]:
+        id: 3
+        name: 3
