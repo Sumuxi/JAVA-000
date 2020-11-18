@@ -29,12 +29,17 @@ public class MyController {
         System.out.println("MyController无参构造方法，创建了对象 MyController");
     }
 
+    public MyController(User user1, User user2) {
+        this.user1 = user1;
+        this.user2 = user2;
+        System.out.println("MyController 两参构造方法，创建了对象 MyController");
+    }
+
     public void test() {
         System.out.println("Spring IOC 容器注入了两个user对象，分别是"
                 + user1.toString() + ","
                 + user2.toString());
     }
-
 
     @Override
     public String toString() {

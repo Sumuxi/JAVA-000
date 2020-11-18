@@ -1,5 +1,6 @@
 package com.sumuxi;
 
+import com.sumuxi.controller.MyController;
 import com.sumuxi.model.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -15,5 +16,8 @@ public class Main1 {
         //获取User实例, 名称和xml中bean的id一致
         User user = ctx.getBean("user",User.class);
         System.out.println(user.toString());
+
+        MyController myController = ctx.getBean("myController", MyController.class);
+        myController.test();
     }
 }

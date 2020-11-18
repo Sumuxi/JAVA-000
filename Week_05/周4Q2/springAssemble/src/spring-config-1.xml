@@ -6,11 +6,18 @@
     <!--我们可以将这个bean理解为我们的javaBean，
         其中两个property标签即表示给User类中的name和age属性赋值。
         这样装配的方式是
-            1.先通过无参构造函数创建对象
+            1.先通过无参构造方法创建对象
             2.通过setter方法设置类成员变量的值
     -->
     <bean id="user" class="com.sumuxi.model.User">
         <property name="name" value="张三"/>
         <property name="age" value="18"/>
     </bean>
+
+    <!--这里装配的方式是通过一个两个User参数的构造方法创建对象-->
+    <bean id="myController" class="com.sumuxi.controller.MyController">
+        <constructor-arg ref="user"></constructor-arg>
+        <constructor-arg ref="user"></constructor-arg>
+    </bean>
+
 </beans>
