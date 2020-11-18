@@ -34,6 +34,8 @@ starter代码请移步[sumuxi-spring-boot-starter目录](周6Q4/demo-spring-boot
 starter-test代码请移步[starter-test](周6Q4/demo-spring-boot-starter/starter-test)
 
 
+
+
 **6.（必做）**研究一下 JDBC 接口和数据库连接池，掌握它们的设计和用法：
 1）使用 JDBC 原生接口，实现数据库的增删改查操作。
 2）使用事务，PrepareStatement 方式，批处理方式，改进上述操作。
