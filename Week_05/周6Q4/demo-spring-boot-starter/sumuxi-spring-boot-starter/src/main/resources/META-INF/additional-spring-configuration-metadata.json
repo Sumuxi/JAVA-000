@@ -17,15 +17,7 @@
 
 {
   "groups": [
-    {
-      "name": "spring.shardingsphere.datasource",
-      "type": "org.apache.shardingsphere.shardingjdbc.spring.boot.SpringBootConfiguration"
-    },
-    {
-      "sourceType": "org.apache.shardingsphere.core.yaml.config.sharding.YamlShardingStrategyConfiguration",
-      "name": "spring.shardingsphere.sharding.default-table-strategy",
-      "type": "org.apache.shardingsphere.core.yaml.config.sharding.YamlShardingStrategyConfiguration"
-    }
+
   ],
   "properties": [
     {
@@ -46,24 +38,11 @@
     },
     {
       "name": "spring.sumuxi.klass.students",
-      "type": "java.util.List",
+      "type": "java.util.ArrayList",
       "description": "klass students."
     }
   ],
   "hints": [
-    {
-      "name": "spring.shardingsphere.datasource.keys",
-      "values": []
-    },
-    {
-      "name": "spring.shardingsphere.datasource.values",
-      "values": [
-      ],
-      "providers": [
-        {
-          "name": "any"
-        }
-      ]
-    }
+
   ]
 }

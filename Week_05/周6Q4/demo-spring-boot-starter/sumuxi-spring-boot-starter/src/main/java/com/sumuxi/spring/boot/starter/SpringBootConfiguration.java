@@ -1,17 +1,15 @@
-package com.sumuxi.sumuxispringbootstarter;
+package com.sumuxi.spring.boot.starter;
 
-import com.sumuxi.sumuxispringbootstarter.model.Klass;
-import com.sumuxi.sumuxispringbootstarter.model.School;
-import com.sumuxi.sumuxispringbootstarter.model.Student;
+import com.sumuxi.spring.boot.starter.model.Klass;
+import com.sumuxi.spring.boot.starter.model.School;
+import com.sumuxi.spring.boot.starter.model.Student;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
 /**

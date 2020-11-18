@@ -1,4 +1,4 @@
-package com.sumuxi.sumuxispringbootstarter.model;
+package com.sumuxi.spring.boot.starter.model;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;

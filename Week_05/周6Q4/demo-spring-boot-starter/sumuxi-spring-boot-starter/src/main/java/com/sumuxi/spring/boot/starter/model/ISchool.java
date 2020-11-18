@@ -1,4 +1,4 @@
-package com.sumuxi.sumuxispringbootstarter.model;
+package com.sumuxi.spring.boot.starter.model;
 
 public interface ISchool {
     

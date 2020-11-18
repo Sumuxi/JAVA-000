@@ -1,8 +1,8 @@
 package com.sumuxi.starter.test;
 
+import com.sumuxi.spring.boot.starter.model.Klass;
 import com.sumuxi.spring.boot.starter.model.School;
 import com.sumuxi.spring.boot.starter.model.Student;
-import com.sumuxi.spring.boot.starter.model.Klass;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;

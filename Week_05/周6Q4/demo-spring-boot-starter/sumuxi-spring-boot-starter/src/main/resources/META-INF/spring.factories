@@ -16,4 +16,4 @@
 #
 
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.sumuxi.SpringBootConfiguration
+com.sumuxi.spring.boot.starter.SpringBootConfiguration
