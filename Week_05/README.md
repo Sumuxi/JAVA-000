@@ -31,8 +31,7 @@ answer:
 
 starter代码请移步[sumuxi-spring-boot-starter目录](周6Q4/demo-spring-boot-starter/sumuxi-spring-boot-starter)
 
-starter-test代码请移步[starter-test](周6Q4/demo-spring-boot-starter/starter-test)
-
+starter-test代码请移步[starter-test目录](周6Q4/demo-spring-boot-starter/starter-test)
 
 
 
@@ -40,3 +39,8 @@ starter-test代码请移步[starter-test](周6Q4/demo-spring-boot-starter/starte
 1）使用 JDBC 原生接口，实现数据库的增删改查操作。
 2）使用事务，PrepareStatement 方式，批处理方式，改进上述操作。
 3）配置 Hikari 连接池，改进上述操作。提交代码到 Github。
+
+answer:
+
+代码请查看[JDBCDemo.java](周6Q6/jdbc-demo/jdbc-demo-1/src/main/java/com/sumuxi/JDBCDemo.java)
+
